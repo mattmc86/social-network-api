@@ -44,7 +44,7 @@ const ThoughtsSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      // Moment
+
       get: (createdAtVal) =>
         moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
     },
@@ -52,7 +52,7 @@ const ThoughtsSchema = new Schema(
       type: String,
       required: true,
     },
-    // Use ReactionsSchema to validate data
+
     reactions: [ReactionsSchema],
   },
   {

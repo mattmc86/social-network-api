@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,9 @@
   "license": "ISC",
     "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.4",
+    "moment": "^2.27.0"
     },
   "bugs": {
     "url": "https://github.com/mattmc86/social-network-api/issues"

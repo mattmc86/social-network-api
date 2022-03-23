@@ -1,7 +1,5 @@
-// Require Users Model
 const { Users } = require("../models");
 
-// Set up Users Controller
 const usersController = {
   // Create a new User
   createUsers({ body }, res) {
@@ -35,7 +33,7 @@ const usersController = {
       // return if no user is found
       .then((dbUsersData) => {
         if (!dbUsersData) {
-          res.status(404).json({ message: "No User with this particular ID!" });
+          res.status(404).json({ message: "No User with this ID!" });
           return;
         }
         res.json(dbUsersData);
@@ -54,7 +52,7 @@ const usersController = {
     })
       .then((dbUsersData) => {
         if (!dbUsersData) {
-          res.status(404).json({ message: "No User with this particular ID!" });
+          res.status(404).json({ message: "No User with this ID!" });
           return;
         }
         res.json(dbUserData);
@@ -66,7 +64,7 @@ const usersController = {
     Users.findOneAndDelete({ _id: params.id })
       .then((dbUsersData) => {
         if (!dbUsersData) {
-          res.status(404).json({ message: "No User with this particular ID!" });
+          res.status(404).json({ message: "No User with this ID!" });
           return;
         }
         res.json(dbUsersData);
@@ -85,7 +83,7 @@ const usersController = {
       .select("-__v")
       .then((dbUsersData) => {
         if (!dbUsersData) {
-          res.status(404).json({ message: "No User with this particular ID!" });
+          res.status(404).json({ message: "No User with this ID!" });
           return;
         }
         res.json(dbUsersData);
@@ -104,7 +102,7 @@ const usersController = {
       .select("-__v")
       .then((dbUsersData) => {
         if (!dbUsersData) {
-          res.status(404).json({ message: "No User with this particular ID!" });
+          res.status(404).json({ message: "No User with this ID!" });
           return;
         }
         res.json(dbUsersData);
@@ -113,5 +111,4 @@ const usersController = {
   },
 };
 
-// Export module users controller
 module.exports = usersController;

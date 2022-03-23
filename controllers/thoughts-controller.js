@@ -1,5 +1,5 @@
 const { Thoughts, Users } = require("../models");
-// Set up Thoughts Controller
+
 const thoughtsController = {
   // Create a new thought
   createThoughts({ params, body }, res) {
@@ -45,7 +45,7 @@ const thoughtsController = {
         if (!dbThoughtsData) {
           res
             .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+            .json({ message: "No thoughts with this ID!" });
           return;
         }
         res.json(dbThoughtsData);
@@ -68,7 +68,7 @@ const thoughtsController = {
         if (!dbThoughtsData) {
           res
             .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+            .json({ message: "No thoughts with this ID!" });
           return;
         }
         res.json(dbThoughtsData);
@@ -83,7 +83,7 @@ const thoughtsController = {
         if (!dbThoughtsData) {
           res
             .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+            .json({ message: "No thoughts with this ID!" });
           return;
         }
         res.json(dbThoughtsData);
@@ -104,7 +104,7 @@ const thoughtsController = {
         if (!dbThoughtsData) {
           res
             .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+            .json({ message: "No thoughts with this ID!" });
           return;
         }
         res.json(dbThoughtsData);
@@ -123,7 +123,7 @@ const thoughtsController = {
         if (!dbThoughtsData) {
           res
             .status(404)
-            .json({ message: "No thoughts with this particular ID!" });
+            .json({ message: "No thoughts with this ID!" });
           return;
         }
         res.json(dbThoughtsData);

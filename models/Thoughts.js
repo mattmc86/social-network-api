@@ -1,7 +1,7 @@
 const { Schema, model, Types } = require("mongoose");
 const moment = require("moment");
 
-// ReactionsSchema
+
 const ReactionsSchema = new Schema(
   {
     // Set custom ID
@@ -22,7 +22,7 @@ const ReactionsSchema = new Schema(
       type: Date,
       default: Date.now,
       get: (createdAtVal) =>
-        moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+        moment(createdAtVal).format("DD MMM, YYYY [at] hh:mm a"),
     },
   },
   {
@@ -32,7 +32,7 @@ const ReactionsSchema = new Schema(
   }
 );
 
-// ThoughtsSchema
+
 const ThoughtsSchema = new Schema(
   {
     thoughtText: {
@@ -46,7 +46,7 @@ const ThoughtsSchema = new Schema(
       default: Date.now,
 
       get: (createdAtVal) =>
-        moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+        moment(createdAtVal).format("DD MMM, YYYY [at] hh:mm a"),
     },
     username: {
       type: String,
@@ -69,8 +69,6 @@ ThoughtsSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
-// create the Thoughts model using the Thoughts Schema
 const Thoughts = model("Thoughts", ThoughtsSchema);
 
-// Export Thoughts Module
 module.exports = Thoughts;
